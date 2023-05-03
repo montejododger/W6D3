@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # resources :users, except:[:create, :destroy] -- When you  wnat to create everything "Except" routes in the arr
 
 
+  #index is just a collection not actually indexing in
+  #index and create dont need indexs becuase they havent been assigned yet
   #VERB, PATH,          CONTROLLER#ACTION,  PREFIX's
   get 'users', to: 'users#index', as: 'users'
   post 'users', to: 'users#create'
