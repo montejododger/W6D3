@@ -22,6 +22,7 @@ module ControlsProj
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    # skip_before_action :verify_authenticity_token
 
     # Configuration for the application, engines, and railties goes here.
     #
