@@ -7,8 +7,8 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(params.require(:user).permit(:name, :email))
-        @user = User.new(user_params)
+        # @user = User.new(params.require(:user).permit(:username))
+        @user = User.Create!(user_params)
 
 
         if @user.save
@@ -36,13 +36,13 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @user.destroy
 
-        render json: @users
+        render json: @user
     end
 
     private
 
     def user_params
-        params.require(:user).permit(:name, :email)
+        params.require(:user).permit(:username)
     end
 
 end

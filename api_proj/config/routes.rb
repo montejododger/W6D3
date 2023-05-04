@@ -9,14 +9,16 @@ Rails.application.routes.draw do
   #index is just a collection not actually indexing in
   #index and create dont need indexs becuase they havent been assigned yet
   #VERB, PATH,          CONTROLLER#ACTION,  PREFIX's
-  get 'users', to: 'users#index', as: 'users'
-  post 'users', to: 'users#create'
-  get 'users/new', to: 'users#new', as: 'new_user'
-  get 'users/:id/edit', to: 'users#edit', as: 'edit_user'
-  get 'users/:id', to: 'users#show', as: 'user'
-  patch 'users/:id', to: 'users#update'
-  put 'users/:id', to: 'users#update'
-  delete 'users/:id', to: 'users#destroy'
+  # get 'users', to: 'users#index', as: 'users'
+  # post 'users', to: 'users#create'
+  # get 'users/new', to: 'users#new', as: 'new_user'
+  # get 'users/:id/edit', to: 'users#edit', as: 'edit_user'
+  # get 'users/:id', to: 'users#show', as: 'user'
+  # patch 'users/:id', to: 'users#update'
+  # put 'users/:id', to: 'users#update'
+  # delete 'users/:id', to: 'users#destroy'
+
+  resources :users, only:[:index, :show, :create, :update, :destroy]
 
 
   # Defines the root path route ("/")
