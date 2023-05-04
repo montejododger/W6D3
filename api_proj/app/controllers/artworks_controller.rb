@@ -6,7 +6,7 @@ class ArtworksController < ApplicationController
 
     def create
         # @artwork = Artwork.Create!(require(:artwork).permit(:title, :image_url, :artist_id))
-        @artwork = Artwork.Create!(artwork_params)
+        @artwork = Artwork.create!(artwork_params)
         
         if @artwork.save
             render json: @artwork

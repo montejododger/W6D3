@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   # delete 'users/:id', to: 'users#destroy'
 
   resources :users, only:[:index, :show, :create, :update, :destroy]
+  resources :artworks, only:[:index, :show, :create, :update, :destroy]
+
+
 
 
   # Defines the root path route ("/")
