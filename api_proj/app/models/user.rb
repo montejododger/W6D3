@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :artworks,
         foreign_key: :artist_id,
         class_name: :Artwork,
+        inverse_of: :artist,
         dependent: :destroy
 
     has_many :views,
